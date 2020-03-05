@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="recursos/bordes.css">
 </head>
 
+
 <body>
 
     <?php $pagina = isset($_GET['page'])? strtolower($_GET['page']) : 'inicio/vista' ?>

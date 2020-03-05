@@ -1,6 +1,6 @@
 <?php
-    require("conexion/connection.php");
-
+    require ("conexion/connection.php"); 
+    require ("consultarUsuario.php");
 ?>
 
 <section class="section">
@@ -62,30 +62,41 @@
                                 <th class="has-text-centered">Opciones</th>
                             </tr>
                         </thead>
-                        <tbody id="datosTratamiento">
+                        <tbody id="datos">
+                            <?php
+                                    foreach ($query as $row) {?>
+                            <tr data-idUser="<?php echo $row['codigoUCC']?>">
+                                <td class="has-text-centered">
+                                    <a href='?page=usuarios/informacionUsuario&codigo=<?php echo $row['codigoUCC'];?>'>
+                                        <?php echo $row['codigoUCC'];?>
+                                    </a>
+                                </td>
+                                <td class="has-text-centered">
+                                    <?php echo $row['Nombres y Apellidos'];?>
+                                </td>
+                                <td class="has-text-centered">
+                                    <?php echo $row['telefono'];?>
+                                </td>
+                                <td class="has-text-centered">
+                                    <?php echo $row['email'];?>
+                                </td>
+                                <td class="has-text-centered">
+                                    <?php echo $row['nombre_rol'];?>
+                                </td>
+                                <td class="has-text-centered">
+                                    <?php echo $row["IF(usuarios.status_usuario = '1', 'Activo', 'Inactivo')"];?>
+                                </td>
 
-                            <tr data-idUser="">
-                                <td class="has-text-centered">
-                                    abc-123
-                                </td>
-                                <td class="has-text-centered">
-                                    3
-                                </td>
-                                <td class="has-text-centered">
-                                    2019-10-07
-                                </td>
-                                <td class="has-text-centered">
-                                    1
-                                </td>
+
                                 <td>
                                     <div class="buttons has-addons is-centered">
-                                        <a class="button is-success is-active is-small" href='#'>
+                                        <a class="button is-success is-active is-small" href='?page=usuarios/actualizarUsuario&codigo=<?php echo $row['codigoUCC'];?>'>
                                             <span class="icon is-small">
                                                 <i class="zmdi zmdi-edit"></i>
                                             </span>
                                         </a>
 
-                                        <a class="button is-danger is-active is-small" href='#'>
+                                        <a class="button is-danger is-active is-small" href='?page=usuarios/eliminarUsuario&codigo=<?php echo $row['codigoUCC'];?>'>
                                             <span class="icon is-small">
                                                 <i class="zmdi zmdi-close"></i>
                                             </span>
@@ -93,6 +104,7 @@
                                     </div>
                                 </td>
                             </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

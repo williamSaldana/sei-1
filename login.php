@@ -22,7 +22,7 @@
                 <p class="modal-card-title">Registro</p>
                 <button class="delete" aria-label="close"></button>
             </header>
-            <form action="modulos/registro/registro_usuario.php">
+            <form action="modulos/usuarios/ValidarUsuario.php" method="POST" name="form2" id="form2">
                 <section class="modal-card-body">
                     <p class="has-text-left" style="margin-bottom: 10px;">
                         Confirme que su usuario no haya sido creado.
@@ -34,7 +34,7 @@
                         <div class="field-body">
                             <div class="field is-grouped">
                                 <p class="control is-expanded has-icons-right">
-                                    <input class="input is-hovered" type="text" required>
+                                    <input class="input is-hovered" type="number" name="codigoUCC" id="codigoUCC" required>
                                     <span class="icon is-small is-right">
                                         <i class="zmdi zmdi-account-circle"></i>
                                     </span>
@@ -71,7 +71,7 @@
                                         <button class='delete' aria-label='delete' id='cerrarmsg'></button>
                                     </div>
                                     <div class='message-body'>
-                                        $errorLogin
+                                      $errorLogin
                                     </div>    
                                 </article>";} ?>
                         <div class="field">

@@ -10,8 +10,8 @@ $estado = $_POST["status_tratamiento"];
 	function ModificarProducto($anombre,$aobservaciones,$aestado){
 		include "conexion/connection.php";
 		
-		$sentencia="INSERT INTO `tratamientos` (`id_tratamiento`, `nombre`, `observaciones`, `status_tratamiento`) VALUES (NULL, '".$anombre."', '".$aobservaciones."','".$aestado."') ";
-		//exit("prueba: ".$sentencia);
+		$sentencia="INSERT INTO 'tratamientos' ('id_tratamiento', 'nombre', 'observaciones', 'status_tratamiento') VALUES (NULL, '".$anombre."', '".$aobservaciones."','".$aestado."') ";
+		exit("prueba: ".$sentencia);
         $resultado=mysqli_query($connection,$sentencia);
     }
 		?>

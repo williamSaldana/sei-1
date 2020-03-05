@@ -1,4 +1,4 @@
-<nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+<nav class="navbar is-primary " role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="/sei/index.php">
             <span class="icon is-small" style="margin-left: 10px">

@@ -1,4 +1,4 @@
-<nav class="navbar is-primary is-fixed-top" role="navigation" aria-label="main navigation">
+<nav class="navbar is-primary" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="index.php">
             <span class="icon is-small" style="margin-left: 10px">
@@ -44,6 +44,13 @@
                     <i class="zmdi zmdi-folder"></i>
                 </span>
                 &nbsp; Gestión UE
+            </a>
+
+            <a class="navbar-item" href="?page=especimen/registroEspecimen">
+                <span class="icon is-small">
+                    <i class="zmdi zmdi-folder"></i>
+                </span>
+                &nbsp; Gestión Especimen
             </a>
 
             <div class="navbar-item has-dropdown is-hoverable">

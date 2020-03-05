@@ -17,7 +17,7 @@
 
     <section class="section">
         <div class="container">
-            <form action="#">
+            <form action="registroUsuario.php" method="POST" name="form2" id="form2">
                 <div class="columns">
                     <div class="column is-1 is-hidden-mobile">&nbsp;</div>
 
@@ -26,7 +26,7 @@
                         <div class="field">
                             <label class="label">Código Ucc</label>
                             <div class="control has-icons-right">
-                                <input class="input is-hovered" type="text">
+                                <input class="input is-hovered" type="number" name="codigoUcc" id="codigoUcc">
                                 <span class="icon is-small is-right">
                                     <i class="zmdi zmdi-accounts-list"></i>
                                 </span>
@@ -36,7 +36,7 @@
                         <div class="field">
                             <label class="label">Nombres</label>
                             <div class="control has-icons-right">
-                                <input class="input is-hovered" type="text">
+                                <input class="input is-hovered" type="text" name="nombres" id="nombres">
                                 <span class="icon is-small is-right">
                                     <i class="zmdi zmdi-collection-text"></i>
                                 </span>
@@ -46,7 +46,7 @@
                         <div class="field">
                             <label class="label">Primer apellido</label>
                             <div class="control has-icons-right">
-                                <input class="input is-hovered" type="text">
+                                <input class="input is-hovered" type="text" name="primerApellido" id="primerApellido">
                                 <span class="icon is-small is-right">
                                     <i class="zmdi zmdi-collection-item-1"></i>
                                 </span>
@@ -56,7 +56,7 @@
                         <div class="field">
                             <label class="label">Segundo apellido</label>
                             <div class="control has-icons-right">
-                                <input class="input is-hovered" type="text">
+                                <input class="input is-hovered" type="text" name="segundoApellido" id="segundoApellido">
                                 <span class="icon is-small is-right">
                                     <i class="zmdi zmdi-collection-item-2"></i>
                                 </span>
@@ -67,11 +67,10 @@
                             <label class="label">Género</label>
                             <div class="control">
                                 <div class="select is-fullwidth">
-                                    <select>
-                                        <option>Seleccione</option>
-                                        <option>Masculino</option>
-                                        <option>Femenino</option>
-                                    </select>
+                                <select name="genero" id="genero" required>
+                                    <option value="1">Masculino</option>
+                                    <option value="2">Femenino</option>
+                                </select>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +82,7 @@
                        <div class="field">
                             <label class="label">Telefono</label>
                             <div class="control has-icons-right">
-                                <input class="input is-hovered" type="text">
+                                <input class="input is-hovered" type="text" name="telefono" id="telefono">
                                 <span class="icon is-small is-right">
                                     <i class="zmdi zmdi-email"></i>
                                 </span>
@@ -93,7 +92,7 @@
                         <div class="field">
                             <label class="label">E-mail</label>
                             <div class="control has-icons-right">
-                                <input class="input is-hovered" type="text">
+                                <input class="input is-hovered" type="email" name="email" id="email">
                                 <span class="icon is-small is-right">
                                     <i class="zmdi zmdi-email"></i>
                                 </span>
@@ -110,7 +109,7 @@
                         <div class="field">
                             <label class="label">Contraseña</label>
                             <div class="control has-icons-right">
-                                <input class="input is-hovered" type="text">
+                                <input class="input is-hovered" type="password" name="contrasenna" id="contrasenna">
                                 <span class="icon is-small is-right">
                                     <i class="zmdi zmdi-key"></i>
                                 </span>
@@ -120,7 +119,7 @@
                         <div class="field">
                             <label class="label">Verificar</label>
                             <div class="control has-icons-right">
-                                <input class="input is-hovered" type="text">
+                                <input class="input is-hovered" type="password" name="verificar" id="verificar">
                                 <span class="icon is-small is-right">
                                     <i class="zmdi zmdi-key"></i>
                                 </span>
