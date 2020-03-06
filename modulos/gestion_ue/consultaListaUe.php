@@ -2,16 +2,22 @@
 
 require("conexion/connection.php");
 
-$consultar = "SELECT usuarios.codigoUCC, CONCAT(usuarios.nombres,' ',usuarios.primer_apellido) AS 'Nombres y Apellidos',
-usuarios.telefono,
-usuarios.email,
-roles.nombre_rol,
-IF(usuarios.status_usuario = '1', 'Activo', 'Inactivo')
+$consultar = "SELECT
+u_experimentales.nombre,
+count(especimenes.codigo) as 'Nº especimenes',
+u_experimentales.creacion,
+u_experimentales.status_uexperimental
 FROM
-usuarios
-INNER JOIN roles ON usuarios.id_rol = roles.id_rol
+u_experimentales
+INNER JOIN especimenes ON especimenes.id_uexperimental = u_experimentales.id_uexperimental
+INNER JOIN ue_usuarios ON ue_usuarios.id_uexperimental = u_experimentales.id_uexperimental
+INNER JOIN usuarios ON ue_usuarios.id_usuario = usuarios.id_usuario
+WHERE
+usuarios.codigoUCC = 485137
+GROUP BY
+especimenes.id_uexperimental
 ORDER BY
-usuarios.codigoUCC ASC";
+u_experimentales.creacion ASC";
 $query = mysqli_query($connection,$consultar);
 $array = mysqli_fetch_array($query);
 

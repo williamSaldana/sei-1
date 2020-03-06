@@ -1,6 +1,6 @@
 <?php
     require ("conexion/connection.php"); 
-    require ("consultarUsuario.php");
+    require ("consultaListaUe.php");
 ?>
 
 <section class="section">
@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="column is-4 has-text-centered">
-                <a class="button is-primary is-hovered" href="?page=tratamientos/registroTratamiento">
+                <a class="button is-primary is-hovered" href="?page=gestion_ue/registroUE">
                     <span class="icon is-small">
                         <i class="zmdi zmdi-folder"></i>
                     </span>
@@ -58,34 +58,32 @@
                                 <th class="has-text-centered">Nombre</th>
                                 <th class="has-text-centered">Nº_especimenes</th>
                                 <th class="has-text-centered">Creación</th>
-                                <th class="has-text-centered">Status</th>
+                                <th class="has-text-centered">Estado</th>
                                 <th class="has-text-centered">Opciones</th>
                             </tr>
                         </thead>
                         <tbody id="datos">
                             <?php
                                     foreach ($query as $row) {?>
-                            <tr data-idUser="<?php echo $row['codigoUCC']?>">
+                            
                                 <td class="has-text-centered">
-                                    <a href='?page=usuarios/informacionUsuario&codigo=<?php echo $row['codigoUCC'];?>'>
-                                        <?php echo $row['codigoUCC'];?>
-                                    </a>
+                                <?php echo $row['nombre'];?>
                                 </td>
                                 <td class="has-text-centered">
-                                    <?php echo $row['Nombres y Apellidos'];?>
+                                    <?php echo $row['Nº especimenes'];?>
                                 </td>
                                 <td class="has-text-centered">
-                                    <?php echo $row['telefono'];?>
+                                    <?php echo $row['creacion'];?>
                                 </td>
+                                
                                 <td class="has-text-centered">
-                                    <?php echo $row['email'];?>
-                                </td>
-                                <td class="has-text-centered">
-                                    <?php echo $row['nombre_rol'];?>
-                                </td>
-                                <td class="has-text-centered">
-                                    <?php echo $row["IF(usuarios.status_usuario = '1', 'Activo', 'Inactivo')"];?>
-                                </td>
+                                    <?php
+                                    if ($row["status_uexperimental"]==1) {
+                                        echo "Activo";
+                                    }else{
+                                        echo "Inactivo";
+                                    }?>
+                                    </td>
 
 
                                 <td>
