@@ -15,7 +15,10 @@
     <input type="date" id="creacion" name="creacion">
     <br>
     <label>Estado:</label>
-    <input id="estado" name="estado"></input>
+    <select name="estado" id="estado">
+      <option value="1">Activo</option>
+      <option value="0">Inactivo</option>
+      </select>
     <br>
     <li class="button">
   <button type="submit">Agregar</button>

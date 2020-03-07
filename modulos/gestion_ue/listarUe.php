@@ -88,13 +88,13 @@
 
                                 <td>
                                     <div class="buttons has-addons is-centered">
-                                        <a class="button is-success is-active is-small" href='?page=usuarios/actualizarUsuario&codigo=<?php echo $row['codigoUCC'];?>'>
+                                        <a class="button is-success is-active is-small" href='?page=gestion_ue/actualizarUE&nombre=<?php echo $row['nombre'];?>'>
                                             <span class="icon is-small">
                                                 <i class="zmdi zmdi-edit"></i>
                                             </span>
                                         </a>
 
-                                        <a class="button is-danger is-active is-small" href='?page=usuarios/eliminarUsuario&codigo=<?php echo $row['codigoUCC'];?>'>
+                                        <a class="button is-danger is-active is-small" href='?page=usuarios/eliminarUE&nombre=<?php echo $row['nombre'];?>'>
                                             <span class="icon is-small">
                                                 <i class="zmdi zmdi-close"></i>
                                             </span>

@@ -29,7 +29,7 @@ function insertarUE($anombre,$acreacion,$aestado){
     <script type="text/javascript">
         
         alert("NO se pudo realizar el registro");
-	window.location.href="?page=gestion_ue/registroUE";
+	window.location.href="?page=gestion_ue/listarUe";
     
         </script>
         <?php
