@@ -13,7 +13,7 @@ INNER JOIN especimenes ON especimenes.id_uexperimental = u_experimentales.id_uex
 INNER JOIN ue_usuarios ON ue_usuarios.id_uexperimental = u_experimentales.id_uexperimental
 INNER JOIN usuarios ON ue_usuarios.id_usuario = usuarios.id_usuario
 WHERE
-usuarios.codigoUCC = 485137
+usuarios.codigoUCC =".$_SESSION['sesion']."
 GROUP BY
 especimenes.id_uexperimental
 ORDER BY

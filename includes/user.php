@@ -31,5 +31,12 @@ class User extends DB{
         return $this->nombre;
         
     }
+
+    public function getCodigo(){
+        return $this->username;
+        
+    }
 }
+
+
 ?>

@@ -18,7 +18,6 @@
     <?php $pagina = isset($_GET['page'])? strtolower($_GET['page']) : 'inicio/vista' ?>
 
     <?php require_once ("menu.php"); ?>
-
     <?php require_once ("modulos/" . $pagina . ".php"); ?>
 
     <?php include ("includes/footer.php"); ?>

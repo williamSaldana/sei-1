@@ -18,13 +18,13 @@ function insertarEspecimen($acodigo,$apeso,$aNacimiento,$aUExperimental,$aestado
     if(mysqli_query($connection, $sql)){
         echo '<script type="text/javascript">
         alert("Registro insertado exitosamente");
-        window.location.href="?page=especimen/registroEspecimen";
+        window.location.href="?page=especimen/listarEspecimen";
     </script>';
     
 } else{ 
     echo '<script type="text/javascript">
         alert("No se puedo realizar el registro");
-        window.location.href="?page=especimen/registroEspecimen";
+        window.location.href="?page=especimen/listarEspecimen";
     </script>';
     }
 }

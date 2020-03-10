@@ -44,7 +44,3 @@ function insertarUsuario($acodigoUcc,$anombres,$aprimerApellido,$asegundoApellid
     }
 }
 ?>
-<script type="text/javascript">
-	/*alert("Registro insertado exitosamente");
-	window.location.href='?page=usuarios/listarUsuario'; */
-</script>

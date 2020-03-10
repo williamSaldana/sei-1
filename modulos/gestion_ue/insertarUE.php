@@ -1,18 +1,17 @@
 <?php
 
 $nombre = $_POST["nombre"];
-$creacion = $_POST["creacion"];
 $estado = $_POST["estado"];
 
 //exit("prueba: ".$nombre." ".$creacion." "."$estado");
 
-insertarUE($nombre,$creacion,$estado);
+insertarUE($nombre,$estado);
 
-function insertarUE($anombre,$acreacion,$aestado){
+function insertarUE($anombre,$aestado){
     
     include("conexion/connection.php");
     
-    $sql = 'INSERT INTO  u_experimentales (nombre, creacion, status_uexperimental) VALUES ("'.$anombre.'","'.$acreacion.'","'.$aestado.'")';
+    $sql = 'INSERT INTO  u_experimentales (nombre, creacion, status_uexperimental) VALUES ("'.$anombre.'","'.date("Y-m-d").'","'.$aestado.'")';
     //exit("prueba: ".$sql);
     
     if(mysqli_query($connection, $sql)){?>

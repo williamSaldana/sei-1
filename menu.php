@@ -46,7 +46,7 @@
                 &nbsp; Gestión UE
             </a>
 
-            <a class="navbar-item" href="?page=especimen/registroEspecimen">
+            <a class="navbar-item" href="?page=especimen/listarEspecimen">
                 <span class="icon is-small">
                     <i class="zmdi zmdi-folder"></i>
                 </span>
