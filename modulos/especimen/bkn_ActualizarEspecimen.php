@@ -1,7 +1,5 @@
 <?php
 
-
-
 $codigo = $_POST["codigo"];
 $peso = $_POST["peso"];
 $fNacimiento = $_POST["fNacimiento"];
@@ -17,14 +15,11 @@ $estado = $_POST["estado"];
 		$sentencia="UPDATE especimenes SET codigo='".$acodigo."', peso= '".$apeso."', f_nacimiento='".$aNacimiento."', id_uexperimental='".$aUExperimental."', status_especimen='".$aestado."' WHERE codigo='".$num."' ";
 		//exit("prueba".$sentencia);
 		$resultado=mysqli_query($connection,$sentencia);
-
-        
+    
 	}
 ?>
 
 <script type="text/javascript">
-
 alert("Registro Modificado exitosamente");
-    window.location.href = '../../?page=especimen/listarEspecimen';
-
+window.location.href = '../../?page=especimen/listarEspecimen';
 </script>

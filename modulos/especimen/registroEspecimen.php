@@ -1,4 +1,3 @@
-
 <?php
   $mysqli = new mysqli('localhost', 'root', '', 'sei');
 ?>
@@ -52,7 +51,7 @@
                         </div>
                     </div>
 
-                    
+
                     <div class="field">
                         <label class="label">Estado</label>
                         <div class="control">

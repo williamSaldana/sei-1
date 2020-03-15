@@ -10,6 +10,10 @@
     <link rel="stylesheet" type="text/css" href="recursos/bulma-start/css/main.css">
     <link rel="stylesheet" type="text/css" href="recursos/icon/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="recursos/bordes.css">
+    <script src="recursos/js/jquery.min.js"></script>
+    <script src="recursos/js/navbar.js"></script>
+    <script src="recursos/js/dropdown.js"></script>
+    <script src="recursos/js/modal.js"></script>
 </head>
 
 
@@ -22,9 +26,7 @@
 
     <?php include ("includes/footer.php"); ?>
 
-    <script src="recursos/js/jquery.min.js"></script>
-    <script src="recursos/js/navbar.js"></script>
-    <script src="recursos/js/dropdown.js"></script>
+   
 
 </body>
 

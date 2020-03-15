@@ -16,6 +16,6 @@
 ?>
 
 <script type="text/javascript">
-	alert("Unidad esperimental eliminado exitosamente");
-	window.location.href='?page=usuarios/listarusuario';
+alert("Unidad esperimental eliminado exitosamente");
+window.location.href = '?page=usuarios/listarusuario';
 </script>

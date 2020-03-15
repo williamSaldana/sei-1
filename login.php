@@ -34,7 +34,8 @@
                         <div class="field-body">
                             <div class="field is-grouped">
                                 <p class="control is-expanded has-icons-right">
-                                    <input class="input is-hovered" type="number" name="codigoUCC" id="codigoUCC" required>
+                                    <input class="input is-hovered" type="number" name="codigoUCC" id="codigoUCC"
+                                        required>
                                     <span class="icon is-small is-right">
                                         <i class="zmdi zmdi-account-circle"></i>
                                     </span>

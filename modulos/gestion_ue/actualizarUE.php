@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
-<?php
+    <?php
  
   $num = $_GET['nombre'];
   //exit("prueba".$num);
@@ -30,23 +32,24 @@
   }
 
 ?>
-<form action="?page=gestion_ue/actualizarUE2" method="POST">
+    <form action="?page=gestion_ue/actualizarUE2" method="POST">
 
-    <label>Nombre:</label>
-    <input type="text" id="nombre" name="nombre" ; value="<?php echo $consulta[0]?>">
-    <br>
-    <label>Creacion:</label>
-    <input type="date" id="creacion" name="creacion"; value="<?php echo $consulta[1]?>">
-    <br>
-    <label>Estado:</label>
-    <select name="estado" id="estado">
-      <option value="1">Activo</option>
-      <option value="0">Inactivo</option>
-      </select>
-    <br>
-    <li class="button">
-  <button type="submit">Actualizar</button>
-</li>
-</form>
+        <label>Nombre:</label>
+        <input type="text" id="nombre" name="nombre" ; value="<?php echo $consulta[0]?>">
+        <br>
+        <label>Creacion:</label>
+        <input type="date" id="creacion" name="creacion" ; value="<?php echo $consulta[1]?>">
+        <br>
+        <label>Estado:</label>
+        <select name="estado" id="estado">
+            <option value="1">Activo</option>
+            <option value="0">Inactivo</option>
+        </select>
+        <br>
+        <li class="button">
+            <button type="submit">Actualizar</button>
+        </li>
+    </form>
 </body>
+
 </html>

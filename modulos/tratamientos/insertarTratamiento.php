@@ -10,14 +10,21 @@ $estado = $_POST["status_tratamiento"];
 	function ModificarProducto($anombre,$aobservaciones,$aestado){
 		include "conexion/connection.php";
 		
-		$sentencia="INSERT INTO 'tratamientos' ('id_tratamiento', 'nombre', 'observaciones', 'status_tratamiento') VALUES (NULL, '".$anombre."', '".$aobservaciones."','".$aestado."') ";
-		exit("prueba: ".$sentencia);
-        $resultado=mysqli_query($connection,$sentencia);
+		$sentencia="INSERT INTO tratamientos (nombre, observaciones, status_tratamiento) VALUES ('".$anombre."', '".$aobservaciones."','".$aestado."') ";
+		//exit("prueba: ".$sentencia);
+		$resultado=mysqli_query($connection,$sentencia);
+		if ($resultado) {?>
+			<script type="text/javascript">
+			alert("Registro insertado exitosamente");
+			window.location.href = '?page=tratamientos/listarTratamiento';
+			</script>
+<?php
+		}else {?>
+			<script type="text/javascript">
+			alert("Registro NO pudo ser insertado");
+			window.location.href = '?page=tratamientos/listarTratamiento';
+			</script>
+			<?php
+		}
     }
 		?>
-			
-
-<script type="text/javascript">
-	alert("Registro insertado exitosamente");
-	window.location.href='?page=tratamientos/listarTratamiento';
-</script>

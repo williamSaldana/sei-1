@@ -19,7 +19,6 @@ $estado = $_POST["estado"];
 ?>
 
 <script type="text/javascript">
-    alert("Registro Modificado exitosamente");
-    window.location.href = '?page=gestion_ue/listarUe';
-
+alert("Registro Modificado exitosamente");
+window.location.href = '?page=gestion_ue/listarUe';
 </script>

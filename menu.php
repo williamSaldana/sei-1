@@ -9,7 +9,8 @@
             </p>
         </a>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -96,19 +97,23 @@
         <div class="navbar-end">
             <div class="navbar-item">
 
-                <div class="dropdown" id="dropdown">
+                <div class="dropdown is-hoverable">
+
                     <div class="dropdown-trigger">
-                        <button class="button is-hovered" aria-haspopup="true" aria-controls="dropdown-menu" style="margin-right: 50px;">
+                        <button class="button" aria-haspopup="true" aria-controls="dropdown-menu4"
+                            style="margin-right: 50px;">
                             <span class="icon is-small">
                                 <i class="zmdi zmdi-account"></i>
                             </span>
+
                             <span><?php echo $user->getNombre(); ?></span>
                             <span class="icon is-small">
                                 <i class="zmdi zmdi-chevron-down"></i>
                             </span>
                         </button>
                     </div>
-                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div class="dropdown-menu" id="dropdown-menu4" role="menu">
+
                         <div class="dropdown-content">
                             <a class="navbar-item" href="#">
                                 <span class="icon is-small">
@@ -128,6 +133,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 </nav>
 

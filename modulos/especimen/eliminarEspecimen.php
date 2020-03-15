@@ -15,6 +15,6 @@
 ?>
 
 <script type="text/javascript">
-	alert("especimen eliminado exitosamente");
-	window.location.href='?page=especimen/listarEspecimen';
+alert("especimen eliminado exitosamente");
+window.location.href = '?page=especimen/listarEspecimen';
 </script>

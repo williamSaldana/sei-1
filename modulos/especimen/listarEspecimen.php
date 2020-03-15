@@ -54,14 +54,14 @@
                                 <th class="has-text-centered">unidad experimental</th>
                                 <th class="has-text-centered">estado</th>
                                 <th class="has-text-centered">Operaciones</th>
-                                </tr>
+                            </tr>
                         </thead>
                         <tbody id="datos">
                             <?php
                                     foreach ($query as $row) {?>
                             <tr data-idUser="<?php echo $row['codigo']?>">
                                 <td class="has-text-centered">
-                                <?php echo $row['codigo'];?>
+                                    <?php echo $row['codigo'];?>
                                 </td>
                                 <td class="has-text-centered">
                                     <?php echo $row['peso'];?>
@@ -75,16 +75,18 @@
                                 <td class="has-text-centered">
                                     <?php echo $row['status_especimen'];?>
                                 </td>
-                               
+
                                 <td>
                                     <div class="buttons has-addons is-centered">
-                                        <a class="button is-success is-active is-small" href='?page=especimen/Front_actualizarEspecimen&codigo=<?php echo $row['codigo'];?>'>
+                                        <a class="button is-success is-active is-small"
+                                            href='?page=especimen/Front_actualizarEspecimen&codigo=<?php echo $row['codigo'];?>'>
                                             <span class="icon is-small">
                                                 <i class="zmdi zmdi-edit"></i>
                                             </span>
                                         </a>
 
-                                        <a class="button is-danger is-active is-small" href='?page=especimen/eliminarEspecimen&codigo=<?php echo $row['codigo'];?>'>
+                                        <a class="button is-danger is-active is-small"
+                                            href='?page=especimen/eliminarEspecimen&codigo=<?php echo $row['codigo'];?>'>
                                             <span class="icon is-small">
                                                 <i class="zmdi zmdi-close"></i>
                                             </span>

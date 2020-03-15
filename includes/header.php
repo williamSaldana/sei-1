@@ -9,7 +9,8 @@
             </p>
         </a>
 
-        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+            data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -26,6 +27,7 @@
                         </span>
                         <span>Crear cuenta</span>
                     </a>
+
                     <a class="button is-hovered">
                         <span class="icon is-small">
                             <i class="zmdi zmdi-file-text"></i>
