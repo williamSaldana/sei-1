@@ -20,8 +20,7 @@
       $filas['genero'],
 	  $filas['telefono'],
 	  $filas['email'],
-      $filas['id_rol'],
-	  $filas['password']
+      $filas['id_rol']
     ];
 
   }
@@ -40,7 +39,7 @@
                     <div class="field">
                         <label class="label">Código Ucc</label>
                         <div class="control has-icons-right">
-                            <input class="input is-hovered" type="text" name="codigoUcc" id="codigoUcc" ; value="<?php echo $consulta[0]?>">
+                            <input class="input is-hovered" type="text" name="codigoUcc" id="codigoUcc" ; value="<?php echo $consulta[0]?>" readonly>
                             <span class="icon is-small is-right">
                                 <i class="zmdi zmdi-accounts-list"></i>
                             </span>
@@ -144,25 +143,7 @@
                         Tenga en cuenta que la contraseña debe tener entre 7 y 10 caracteres
                     </p>
 
-                    <div class="field">
-                        <label class="label">Contraseña</label>
-                        <div class="control has-icons-right">
-                            <input class="input is-hovered" type="text" id="contrasenna" name="contrasenna">
-                            <span class="icon is-small is-right">
-                                <i class="zmdi zmdi-key"></i>
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="field">
-                        <label class="label">Verificar</label>
-                        <div class="control has-icons-right">
-                            <input class="input is-hovered" type="text" id="verificar" name="verificar">
-                            <span class="icon is-small is-right">
-                                <i class="zmdi zmdi-key"></i>
-                            </span>
-                        </div>
-                    </div>
+                   
 
                     <div class="field">
                         <label class="label">Status</label>

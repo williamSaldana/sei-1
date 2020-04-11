@@ -22,7 +22,7 @@ require("consultaTratamientos.php");
                     <div class="field-body">
                         <div class="field is-grouped">
                             <p class="control is-expanded has-icons-right">
-                                <input class="input is-hovered" type="text" required>
+                                <input class="input is-hovered" type="text" id="txtTratamiento" placeholder="Buscar..." onkeyup="busquedaTratamiento();" >
                                 <span class="icon is-small is-right">
                                     <i class="zmdi zmdi-format-list-bulleted"></i>
                                 </span>
@@ -41,52 +41,6 @@ require("consultaTratamientos.php");
             </div>
         </div>
 
-        <div class="columns">
-            <div class="column is-12">
-                <div class="table-container">
-                    <table class="table is-hoverable is-fullwidth">
-                        <thead>
-                            <tr>
-                                <th class="has-text-centered">Nombre</th>
-                                <th class="has-text-centered">Observaciones</th>
-                                <th class="has-text-centered">Status</th>
-                                <th class="has-text-centered">Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody id="datosTratamiento">
-                            <?php
-                            foreach ($query as $row) {?>
-                            <tr data-idUser="<?php echo $row['nombre']?>">
-                                <td class="has-text-centered">
-                                    <?php echo $row['nombre'];?>
-                                </td>
-                                <td class="has-text-centered">
-                                    <?php echo $row['observaciones'];?>
-                                </td>
-                                <td class="has-text-centered">
-                                    <?php echo $row['status_tratamiento'];?>
-                                </td>
-                                <td>
-                                    <div class="buttons has-addons is-centered">
-                                        <a class="button is-success is-active is-small" href='?page=tratamientos/actualizarTratamiento&nombre=<?php echo $row['nombre'];?>'>
-                                            <span class="icon is-small">
-                                                <i class="zmdi zmdi-edit"></i>
-                                            </span>
-                                        </a>
-
-                                        <a class="button is-danger is-active is-small" href='?page=tratamientos/eliminarTratamiento&nombre=<?php echo $row['nombre'];?>'>
-                                            <span class="icon is-small">
-                                                <i class="zmdi zmdi-close"></i>
-                                            </span>
-                                        </a>
-                                    </div>
-                                </td>
-                            </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <div id="datosT"></div>
     </div>
 </section>

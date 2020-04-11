@@ -35,7 +35,7 @@
                     <div class="field">
                         <label class="label">Nombre</label>
                         <div class="control has-icons-right">
-                            <input class="input is-hovered" type="text" name="nombre" id="nombre" ; value="<?php echo $consulta[0]?>" required>
+                            <input class="input is-hovered" type="text" name="nombre" id="nombre" ; value="<?php echo $consulta[0]?>" readonly>
                             <span class="icon is-small is-right">
                                 <i class="zmdi zmdi-collection-text"></i>
                             </span>

@@ -59,3 +59,4 @@
         </form>
     </div>
 </section>
+<script src="recursos/js/peticion.js"></script>

@@ -14,6 +14,7 @@
     <script src="recursos/js/navbar.js"></script>
     <script src="recursos/js/dropdown.js"></script>
     <script src="recursos/js/modal.js"></script>
+    <script src="recursos/js/peticion.js"></script>
 </head>
 
 

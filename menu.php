@@ -26,7 +26,7 @@
                 &nbsp; Inicio
             </a>
 
-            <a class="navbar-item" href="?page=usuarios/listarUsuario">
+            <a class="navbar-item" href="?page=usuarios/listarUsuario" onclick="busquedaUsuario();">
                 <span class="icon is-small">
                     <i class="zmdi zmdi-account"></i>
                 </span>

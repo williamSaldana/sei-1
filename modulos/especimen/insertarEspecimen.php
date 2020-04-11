@@ -1,31 +1,64 @@
 <?php
 
-$codigo = $_POST["codigo"];
-$peso = $_POST["peso"];
-$fNacimiento = $_POST["fNacimiento"];
-$uExperimental = $_POST["uExperimental"];
-$estado = $_POST["estado"];
+if(isset($_GET['funcion'])){
+    
+    $funcion = $_GET['funcion'];
+    $funcion();
+  
+  }
 
-insertarEspecimen($codigo,$peso,$fNacimiento,$uExperimental,$estado);
+  //terminar insertar especimen
+  
+  function ejecutar(){
 
-function insertarEspecimen($acodigo,$apeso,$aNacimiento,$aUExperimental,$aestado){
+    $arreglo = json_decode($_GET['array']);
+
+    $arreglo = (array) $arreglo;
+
+    $uExperimental = $_GET['nombre'];
+
+    experimental($uExperimental,$arreglo);
+
+  }
+
+function experimental($exp,$array){
+
+    include("../../conexion/connection.php");
+  
+    $sql = "SELECT id_uexperimental FROM u_experimentales WHERE nombre = '$exp'";
+
+    $res=mysqli_query($connection, $sql);
+
+    while($rows=mysqli_fetch_array($res)){
+        
+        $ex=$rows[0];
     
-    include("conexion/connection.php");
-    
-    $sql = 'INSERT INTO  especimenes (codigo, peso, f_nacimiento, id_uexperimental, status_especimen) VALUES ("'.$acodigo.'","'.$apeso.'","'.$aNacimiento.'","'.$aUExperimental.'","'.$aestado.'")';
-    //exit("prueba: ".$sql);
-    
-    if(mysqli_query($connection, $sql)){
-        echo '<script type="text/javascript">
-        alert("Registro insertado exitosamente");
-        window.location.href="?page=especimen/listarEspecimen";
-    </script>';
-    
-} else{ 
-    echo '<script type="text/javascript">
-        alert("No se puedo realizar el registro");
-        window.location.href="?page=especimen/listarEspecimen";
-    </script>';
     }
+        
+    insertarEspecimen($ex,$estado,$array);        
+    //arreglar especimen adjuntar en el arreglo
 }
+
+function insertarEspecimen($aUExperimental,$aestado,$arreglo){
+    
+    include("../../conexion/connection.php");
+
+    foreach ($arreglo as $value) {
+        
+        $sql = 'INSERT INTO  especimenes (codigo, peso, f_nacimiento, id_uexperimental, status_especimen) VALUES ("'.$value[0].'","'.$value[1].'","'.$value[2].'","'.$aUExperimental.'","'.$value[3].'")';
+        
+        if(mysqli_query($connection, $sql)){
+            
+            echo("Registro insertado exitosamente");
+        
+        } else{ 
+            
+            echo("No se puedo realizar el registro");
+        
+        }
+    
+    }
+    
+}
+
 ?>

@@ -120,7 +120,6 @@
     <script src="recursos/js/jquery.min.js"></script>
     <script src="recursos/js/navbar.js"></script>
     <script src="recursos/js/modal.js"></script>
-    <script src="recursos/js/mensaje.js"></script>
 </body>
 
 </html>
