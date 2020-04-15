@@ -28,7 +28,7 @@ if ($_POST["texto"] != "") {
 	tratamientos 
 	ORDER BY
 	tratamientos.id_tratamiento ASC";
-	echo($query);
+	
 }
 $tmp= '<table class="table">
 		<tr class="bg-primary" style="font-weight: bold;">

@@ -2,6 +2,11 @@
     require ("conexion/connection.php"); 
     require ("consultaListaUe.php");
 ?>
+<script>
+// Almacena la información en sessionStorage
+sessionStorage.setItem('ventana', 'unidadExperimental');
+
+</script>
 
 <section class="section">
     <div class="container">

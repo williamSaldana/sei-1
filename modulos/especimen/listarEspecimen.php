@@ -3,7 +3,11 @@
     require ("consultarEspecimen.php");
     $mysqli = new mysqli('localhost', 'root', '', 'sei');
 ?>
+<script>
+// Almacena la información en sessionStorage
+sessionStorage.setItem('ventana', 'especimen');
 
+</script>
 <section class="section">
     <div class="container">
         <div class="columns">

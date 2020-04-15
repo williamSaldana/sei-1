@@ -4,6 +4,13 @@
     
 ?>
 
+<script>
+    // Almacena la información en sessionStorage
+    sessionStorage.setItem('ventana', 'usuario');
+    
+    </script>
+
+
 <section class="section">
     <div class="container">
         <div class="columns">

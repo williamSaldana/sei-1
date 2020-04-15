@@ -3,6 +3,11 @@ require("conexion/connection.php");
 require("consultaTratamientos.php");
 ?>
 
+<script>
+// Almacena la información en sessionStorage
+sessionStorage.setItem('ventana', 'tratamiento');
+
+</script>
 <section class="section">
     <div class="container">
         <div class="columns">

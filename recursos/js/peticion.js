@@ -1,28 +1,32 @@
 window.onload = function () {
 
-	if (document.getElementById('txtTratamiento').value != '') {
-		
+	var data = sessionStorage.getItem('ventana');
+
+	 if (data=='tratamiento') {
+
+		console.log(data);		
 		this.busquedaTratamiento();
 
-	}else if (document.getElementById('txtListUsuario').value != '') {
+	}else if (data=='usuario') {
 
+		console.log(data);
 		this.busquedaUsuario();
 		
-	} else if (document.getElementById('txtUsuario').value != '') {
+	} else if (data=='gestionUsuarioUE') {
 
+		console.log(data);
 		this.busquedaUsuarioUE();
 		
-	} else {
+	} else if(data=='unidadExperimental'){
 		
+		console.log(data);
 		this.busquedaGestionUe();
 
 	}
 
-
-
-
-
 }
+
+
 
 var listado = new Array();
 var num = 1;
