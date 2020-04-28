@@ -46,6 +46,8 @@ sessionStorage.setItem('ventana', 'especimen');
             </div>
         </div>
 
+       
+
         <div class="columns">
             <div class="column is-12">
                 <div class="table-container">

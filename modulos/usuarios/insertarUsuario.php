@@ -1,5 +1,7 @@
 <?php
 
+include("conexion/connection.php");
+
 $codigoUcc = $_POST["codigoUcc"];
 $nombres = $_POST["nombres"];
 $primerApellido = $_POST["primerApellido"];
@@ -18,11 +20,11 @@ insertarUsuario($codigoUcc,$nombres,$primerApellido,$segundoApellido,$genero,$te
 
 }else{?>
 
-    <script type="text/javascript">
-        alert("Las contraseñas no coinciden");
-	window.location.href="?page=usuarios/nuevoUsuario";
-    </script>
-    <?php
+<script type="text/javascript">
+alert("Las contraseñas no coinciden");
+window.location.href = "?page=usuarios/nuevoUsuario";
+</script>
+<?php
 }
 function insertarUsuario($acodigoUcc,$anombres,$aprimerApellido,$asegundoApellido,$agenero,$atelefono,$aemail,$arol,$acontrasenna,$aestado){
     

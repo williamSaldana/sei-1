@@ -17,6 +17,7 @@ function users(codigoUcc, nombres, primerApellido, segundoApellido, genero, tele
 users.prototype.AddUser = function () {
     console.log(this.codigoUcc + " " + this.nombres + " " + this.primerApellido + " " + this.segundoApellido + " " + this.genero + " " + this.telefono + " " + this.email + " " + this.rol + " " + this.contrasenna + " " + this.verificar + " " + this.estado);
     $.ajax({
+        async :false,
         type: "POST",
         url: this.action,
         data: { codigoUcc: this.codigoUcc, nombres: this.nombres, primerApellido: this.primerApellido, segundoApellido: this.segundoApellido, genero: this.genero, telefono: this.telefono, email: this.email, rol: this.rol, contrasenna: this.contrasenna, verificar: this.verificar, estado: this.estado },

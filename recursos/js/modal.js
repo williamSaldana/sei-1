@@ -1,5 +1,5 @@
 window.onload = function () {
-
+console.log("modal");
   $("#showModal").click(function () {
     $(".modal").addClass("is-active");
   });
@@ -17,6 +17,7 @@ function poblarTabla() {
     var QueryString = "funcion=getEstudiantes&codigo=" + codigo;
 
     $.ajax({
+      async: false,
       url: "modulos/gestion_ue/llenarTabla.php",
       data: QueryString,
 

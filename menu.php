@@ -47,14 +47,14 @@
                 &nbsp; Gestión UE
             </a>
 
-            <a class="navbar-item" href="?page=especimen/listarEspecimen">
+<!--             <a class="navbar-item" href="?page=especimen/listarEspecimen">
                 <span class="icon is-small">
                     <i class="zmdi zmdi-folder"></i>
                 </span>
                 &nbsp; Gestión Especimen
-            </a>
+            </a> -->
 
-            <div class="navbar-item has-dropdown is-hoverable">
+<!--             <div class="navbar-item has-dropdown is-hoverable">
 
                 <a class="navbar-item navbar-link">
                     <span class="icon is-small">
@@ -84,9 +84,51 @@
                         &nbsp; Productividad
                     </a>
                 </div>
+            </div> -->
+
+            <div class="navbar-item has-dropdown is-hoverable">
+
+                <a class="navbar-item navbar-link">
+                    <span class="icon is-small">
+                        <i class="zmdi zmdi-assignment-o"></i>
+                    </span>
+                    &nbsp; Graficas
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item" href="?page=reportes/BienestarCalidadHuevo/bienestarCalidadHuevo">
+                        <span class="icon is-small">
+                            <i class="zmdi zmdi-assignment"></i>
+                        </span>
+                        &nbsp; Bienestar vs Calidad Huevo
+                    </a>
+                    
+
+                    <a class="navbar-item" href="?page=reportes/BienestarEspecimen/ftn_Bienestarespecimen">
+                        <span class="icon is-small">
+                            <i class="zmdi zmdi-book"></i>
+                        </span>
+                        &nbsp; Especimenes vs bienestar
+                    </a>
+
+                    <a class="navbar-item" href="?page=reportes/EspecimenCalidad/ftn_EspecimenCalidad">
+                        <span class="icon is-small">
+                            <i class="zmdi zmdi-book"></i>
+                        </span>
+                        &nbsp; Especimenes vs calidad de huevo
+                    </a>
+
+                    <a class="navbar-item" href="?page=reportes/ExperimentalProductividad/ftn_ExperimentalProductividad">
+                        <span class="icon is-small">
+                            <i class="zmdi zmdi-book"></i>
+                        </span>
+                        &nbsp; Unidad experimental vs productividad
+                    </a>
+                    
+                </div>
             </div>
 
-            <a class="navbar-item" href="#">
+            <a class="navbar-item" href="">
                 <span class="icon is-small">
                     <i class="zmdi zmdi-ruler"></i>
                 </span>

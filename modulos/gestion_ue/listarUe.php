@@ -27,7 +27,7 @@ sessionStorage.setItem('ventana', 'unidadExperimental');
                     <div class="field-body">
                         <div class="field is-grouped">
                             <p class="control is-expanded has-icons-right">
-                                <input class="input is-hovered" type="text" id="txtUsuario" placeholder="Buscar..." onkeyup="busquedaGestionUe();">
+                                <input class="input is-hovered" type="text" id="txtUnidadExperimantal" placeholder="Buscar..." onkeyup="busquedaGestionUe();">
                                 <span class="icon is-small is-right">
                                     <i class="zmdi zmdi-folder"></i>
                                 </span>

@@ -1,15 +1,16 @@
 <?php
+ $clave="UCC";  
  
-  $num = $_GET['nombre'];
+ $num = $_GET['i'];
   //exit("prueba".$num);
-  
+  $cadena_desencriptada = decrypt($num,$clave);
 
 
-  $consulta=ConsultarTratamiento($num);
+  $consulta=ConsultarTratamiento($cadena_desencriptada);
 
   function ConsultarTratamiento($a){
     include "conexion/connection.php";
-    $sentencia="SELECT * FROM tratamientos WHERE nombre='".$a."' ";
+    $sentencia="SELECT * FROM tratamientos WHERE id_tratamiento='".$a."' ";
     
     $resultado=mysqli_query($connection,$sentencia);
     $filas=mysqli_fetch_assoc($resultado);
@@ -19,6 +20,20 @@
 	  $filas['status_tratamiento'],
 	  ];
   }
+
+  function decrypt($string, $key) {
+    $result = '';
+    $string = base64_decode($string);
+    for($i=0; $i<strlen($string); $i++) {
+       $char = substr($string, $i, 1);
+       $keychar = substr($key, ($i % strlen($key))-1, 1);
+       $char = chr(ord($char)-ord($keychar));
+       $result.=$char;
+    }
+    return $result;
+ }
+
+ 
 ?>
 
 
@@ -35,7 +50,7 @@
                     <div class="field">
                         <label class="label">Nombre</label>
                         <div class="control has-icons-right">
-                            <input class="input is-hovered" type="text" name="nombre" id="nombre" ; value="<?php echo $consulta[0]?>" readonly>
+                            <input class="input is-hovered" type="text" name="nombre" id="nombre" ; value="<?php echo $consulta[0]?>">
                             <span class="icon is-small is-right">
                                 <i class="zmdi zmdi-collection-text"></i>
                             </span>
@@ -69,7 +84,7 @@
 
                     <div class="field is-grouped" style="margin-top: 30px;">
                         <div class="control">
-                            <button class="button is-primary is-active" onclick="getData()">
+                            <button class="button is-primary is-active">
                                 <span class="icon is-small">
                                     <i class="zmdi zmdi-format-list-bulleted"></i>
                                 </span>

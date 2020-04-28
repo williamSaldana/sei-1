@@ -33,6 +33,13 @@ var num = 1;
 var especimen = new Array();
 var a;
 
+function registroUE(){
+
+	obtenerDato();
+	obtenerUex();
+
+}
+
 function obtenerDato() {
 
 	var nombre = document.getElementById('nombre').value;
@@ -62,6 +69,7 @@ function obtenerDato() {
 	
 	var QueryString='funcion=ejecutar&array='+jObject+'&nombre='+nombre+'&estado='+estado;
 	$.ajax({
+		async: false,
 		type: "GET",
 		url  : "modulos/gestion_ue/insertarUE.php",
 		data : QueryString,
@@ -80,6 +88,8 @@ function obtenerUex() {
 	var experimental = document.getElementById('nombre').value;
 	var table = document.getElementById('tableEspecimen');
 	var cells = table.getElementsByTagName('td');
+
+	console.log(experimental);
 
 	var filas = table.rows.length;
 
@@ -138,6 +148,7 @@ function obtenerUex() {
 	var QueryString='funcion=ejecutar&array='+jObject2+'&nombre='+experimental;
 
 	$.ajax({
+		async: false,
 		type: 'GET',
 		url: "modulos/especimen/insertarEspecimen.php",
 		data: QueryString,
@@ -156,7 +167,10 @@ function agregarEspecimen() {
 	fNacimientoEspecimen = document.getElementById("fNacimientoEspecimen").value
 	estadoEspecimen = document.getElementById("estadoEspecimen").value
 
+	if (codigoEspecimen == "" || pesoEspecimen == "" || fNacimientoEspecimen == "") {
+		alert("llene todos los campos");
 
+	}else{
 	especimen.push([codigoEspecimen, pesoEspecimen, fNacimientoEspecimen, estadoEspecimen]);
 	console.log(especimen);
 
@@ -179,7 +193,7 @@ function agregarEspecimen() {
 	}
 	$("#tableEspecimen tbody").html(str)
 	$("#tableEspecimen").css('display', 'block');
-
+}
 
 }
 
@@ -205,6 +219,7 @@ function busquedaUsuarioUE() {
 	};
 
 	$.ajax({
+		async: false,
 		data: parametros,
 		url: 'modulos/gestion_ue/buscarU_UE.php',
 		type: 'POST',
@@ -229,6 +244,7 @@ function agregarUsuario() {
 	};
 
 	$.ajax({
+		async: false,
 		data: parametros,
 		url: 'modulos/gestion_ue/asignarUsu.php',
 		type: 'POST',
@@ -245,7 +261,7 @@ function agregarUsuario() {
 
 				var length = listado.length
 				var str = ''
-				console.log(listado);
+				
 				for (var i = 0; i < length; i++) {
 
 					var item = listado[i]
@@ -273,7 +289,27 @@ function eliminarUsuario(a, b) {
 
 	document.getElementById("table_result").deleteRow(a);
 
-	listado.splice(b, b);
+	listado.splice(b, 1);
+	 console.log(listado);
+
+	 var length = listado.length
+	 var str = ''
+	 
+	 for (var i = 0; i < length; i++) {
+
+		 var item = listado[i]
+		 var sum = i + 1;
+
+		 str += '<tr>' +
+			 '<td>' + sum + '</td>' +
+			 '<td>' + item[0] + '</td>' +
+			 '<td>' + item[1] + '</td>' +
+			 '<td><input type="button" onclick="eliminarUsuario(' + sum + ',' + i + ');" value="Eliminar" /></td>' +
+			 '</tr>'
+		 num++;
+	 }
+	 $("#table_result tbody").html(str)
+	 $("#table_result").css('display', 'block');
 
 }
 
@@ -281,9 +317,30 @@ function eliminarEspecimen(a, b) {
 
 	document.getElementById("tableEspecimen").deleteRow(a);
 
-	especimen.splice(b, b);
+	especimen.splice(b, 1);
+
+	var length = especimen.length
+	var str = ''
+
+	for (var i = 0; i < length; i++) {
+
+		var item = especimen[i]
+		var sum = i + 1;
+		str += '<tr>' +
+			'<td>' + sum + '</td>' +
+			'<td>' + item[0] + '</td>' +
+			'<td>' + item[1] + '</td>' +
+			'<td>' + item[2] + '</td>' +
+			'<td>' + item[3] + '</td>' +
+			'<td><input type="button" onclick="eliminarEspecimen(' + sum + ',' + i + ');" value="Eliminar" /></td>' +
+			'</tr>'
+		num++;
+	}
+	$("#tableEspecimen tbody").html(str)
+	$("#tableEspecimen").css('display', 'block');
 
 }
+
 
 
 function busquedaUsuario() {
@@ -295,6 +352,7 @@ function busquedaUsuario() {
 	};
 
 	$.ajax({
+		async: false,
 		data: parametros,
 		url: 'modulos/usuarios/bkn_busquedaUsuarioTR.php',
 		type: 'POST',
@@ -310,15 +368,16 @@ function busquedaUsuario() {
 
 function busquedaGestionUe() {
 
-	var texto = document.getElementById("txtUsuario").value;
+	var texto = document.getElementById("txtUnidadExperimantal").value;
 
 	var parametros = {
 		"texto": texto
 	};
 
 	$.ajax({
+		async: false,
 		data: parametros,
-		url: 'modulos/gestion_ue/buscar.php',
+		url: 'modulos/gestion_ue/bkn_busquedaUETR.php',
 		type: 'POST',
 		success: function (response) {
 			$("#datosUE").html(response);
@@ -342,6 +401,7 @@ function busquedaTratamiento() {
 	};
 
 	$.ajax({
+		async: false,
 		data: parametros,
 		url: 'modulos/tratamientos/bkn_busquedaTratamientoTR.php',
 		type: 'POST',

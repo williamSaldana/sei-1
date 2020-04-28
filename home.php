@@ -15,6 +15,8 @@
     <script src="recursos/js/dropdown.js"></script>
     <script src="recursos/js/modal.js"></script>
     <script src="recursos/js/peticion.js"></script>
+    <script src="recursos/js/graficas.js"></script>
+    <script src="recursos/js/plotly-latest.min.js"></script>
 </head>
 
 

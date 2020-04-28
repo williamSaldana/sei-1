@@ -3,6 +3,8 @@
 
 require ("../../conexion/connection.php"); 
 
+$clave="UCC";
+
 $tmp="";
 
 if ($_POST["texto"] != "") {
@@ -23,7 +25,7 @@ if ($_POST["texto"] != "") {
 	
 }else {
 	$query="SELECT tratamientos.id_tratamiento,tratamientos.nombre,
-	tratamientos.observaciones,tratamientos.status_tratamiento
+	tratamientos.observaciones,IF(tratamientos.status_tratamiento = '1', 'Activo', 'Inactivo') AS estado
 	FROM 
 	tratamientos 
 	ORDER BY
@@ -43,15 +45,28 @@ $tmp= '<table class="table">
 		
 
 		while ($row=mysqli_fetch_array($res)) {
+			
+			$idTratamiento=$row['id_tratamiento'];
+
+			$cadena_encriptada = encrypt($idTratamiento,$clave);
+
 			$tmp.=
 			'<tr>
 			<td>'.$row['nombre'].'</td>
 			<td>'.$row['observaciones'].'</td>
-			<td>'.$row['status_tratamiento'].'</td>
+			<td>'.$row['estado'].'</td>
 			
-			<td>
-			<a  class="btn btn-default" href=?page=tratamientos/actualizarTratamiento&nombre='.$row['nombre'].'>editar</a>
-			<a  class="btn btn-default" href=?page=tratamientos/eliminarTratamiento&nombre='.$row['nombre'].'>eliminar</a>
+			<td align="center">
+			<a  class="btn btn-default" href=?page=tratamientos/actualizarTratamiento&i='.$cadena_encriptada.'>
+				<span class="icon is-small">
+               		<i class="zmdi zmdi-edit"></i>
+        		</span>
+			</a>
+			<a  class="btn btn-default" href=?page=tratamientos/eliminarTratamiento&i='.$cadena_encriptada.'>
+				<span class="icon is-small">
+            		<i class="zmdi zmdi-close"></i>
+            	</span>
+			</a>
 			</td>
 			</tr>';
 		}
@@ -61,4 +76,15 @@ $tmp= '<table class="table">
 
 		
 echo $tmp;
+
+function encrypt($string, $key) {
+    $result = '';
+    for($i=0; $i<strlen($string); $i++) {
+       $char = substr($string, $i, 1);
+       $keychar = substr($key, ($i % strlen($key))-1, 1);
+       $char = chr(ord($char)+ord($keychar));
+       $result.=$char;
+    }
+    return base64_encode($result);
+ }
 ?>

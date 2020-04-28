@@ -51,11 +51,12 @@ if ($_POST["texto"] != "") {
 }
 $tmp= '<table class="table">
 		<tr class="bg-primary" style="font-weight: bold;">
-			<td>NOMBRE UCC</td>
+			<td>UNIDAD EXPERIMENTAL</td>
 			<td>ESPECIMENES</td>
             <td>CREACION</td>
             <td>ESTADO</td>
-            <td>OPERACIONES</td>
+			<td>NOTAS</td>
+			<td>OPERACIONES</td>
 		</tr>';
 
 		$res=mysqli_query($connection,$query) or die('error en consulta'.mysqli_error($connection));
@@ -70,8 +71,28 @@ $tmp= '<table class="table">
 			<td>'.$row['creacion'].'</td>
 			<td>'.$row['estado'].'</td>
 			<td>
-			<a  class="btn btn-default" href=?page=gestion_ue/actualizarUE&nombre='.$row['nombre'].'>editar</a>
-			<a  class="btn btn-default" href=?page=gestion_ue/eliminarUE&nombre='.$row['nombre'].'>eliminar</a>
+			<a  class="btn btn-default" href=?page=gestion_ue/front_informacionUE&nombre='.$row['nombre'].'>Especimenes</a>
+			
+			</td>
+			<td>
+			<a  class="btn btn-default" href=?page=gestion_ue/actualizarUE&nombre='.$row['nombre'].'>
+				<span class="icon is-small">
+               		<i class="zmdi zmdi-edit"></i>
+        		</span>
+			</a>
+			
+			<a  class="btn btn-default" href=?page=gestion_ue/eliminarUE&nombre='.$row['nombre'].'>
+				<span class="icon is-small">
+            		<i class="zmdi zmdi-close"></i>
+            	</span>
+			</a>
+			
+			<a class="button is-hovered" href=?page=gestion_ue/generaQR&nombre='.$row['nombre'].'>
+			<span class="icon is-small">
+				<i class="zmdi zmdi-apps"></i>
+			</span>
+			<span>Generar QR</span>
+		</a>
 			</td>
 			</tr>';
 		}
@@ -82,4 +103,3 @@ $tmp= '<table class="table">
 		
 echo $tmp;
 ?>
-

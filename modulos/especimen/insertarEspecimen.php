@@ -27,19 +27,19 @@ function experimental($exp,$array){
   
     $sql = "SELECT id_uexperimental FROM u_experimentales WHERE nombre = '$exp'";
 
-    $res=mysqli_query($connection, $sql);
+    $res=mysqli_query($connection, $sql) or die('error en consulta'.mysqli_error($connection));
 
-    while($rows=mysqli_fetch_array($res)){
+    $rows=mysqli_fetch_array($res);
         
         $ex=$rows[0];
-    
-    }
         
-    insertarEspecimen($ex,$estado,$array);        
+    
+    
+    insertarEspecimen($ex,$array);        
     //arreglar especimen adjuntar en el arreglo
 }
 
-function insertarEspecimen($aUExperimental,$aestado,$arreglo){
+function insertarEspecimen($aUExperimental,$arreglo){
     
     include("../../conexion/connection.php");
 
@@ -49,11 +49,11 @@ function insertarEspecimen($aUExperimental,$aestado,$arreglo){
         
         if(mysqli_query($connection, $sql)){
             
-            echo("Registro insertado exitosamente");
+            echo("Especimen insertado exitosamente");
         
         } else{ 
             
-            echo("No se puedo realizar el registro");
+            echo("NO se puedo realizar el especimen");
         
         }
     

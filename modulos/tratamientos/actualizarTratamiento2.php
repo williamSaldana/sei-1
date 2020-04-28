@@ -11,8 +11,8 @@ $estado = $_POST["status_tratamiento"];
 		include "conexion/connection.php";
 		
 		$sentencia="UPDATE tratamientos SET nombre='".$anombre."', observaciones= '".$aobservaciones."', status_tratamiento='".$aestado."' WHERE nombre='".$anombre."'";
-		//exit("prueba: ".$sentencia);
-		$resultado=mysqli_query($connection,$sentencia);
+		
+		$resultado=mysqli_query($connection,$sentencia) or die('error en consulta'.mysqli_error($connection));
 		
 		if ($resultado) {?>
 			<script type="text/javascript">
