@@ -96,10 +96,10 @@
                             </div>
                             <p class="help has-text-left">Ingrese su contraseña</p>
                         </div>
-
+<!-- 
                         <a href="modulos/recordatorio_clave/recordatorio.php" class="has-text-grey-dark">
                             ¿Olvido su contraseña?
-                        </a>
+                        </a> -->
 
                         <div class="field">
                             <p class="control" style="margin-top: 10px;">

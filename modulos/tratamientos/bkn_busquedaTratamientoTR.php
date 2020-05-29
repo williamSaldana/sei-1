@@ -11,13 +11,10 @@ if ($_POST["texto"] != "") {
 
 	$q=$connection->real_escape_string($_POST['texto']);
 
-	$query="SELECT
-    tratamientos.id_tratamiento,
-    tratamientos.nombre,
-    tratamientos.observaciones,
-    tratamientos.status_tratamiento
-    FROM
-    tratamientos
+	$query="SELECT tratamientos.id_tratamiento,tratamientos.nombre,
+	tratamientos.observaciones,IF(tratamientos.status_tratamiento = '1', 'Activo', 'Inactivo') AS estado
+	FROM 
+	tratamientos 
 	WHERE 
 		nombre LIKE '%".$q."%' OR
 		observaciones LIKE '%".$q."%' OR
@@ -32,6 +29,7 @@ if ($_POST["texto"] != "") {
 	tratamientos.id_tratamiento ASC";
 	
 }
+
 $tmp= '<table class="table">
 		<tr class="bg-primary" style="font-weight: bold;">
 			<td>NOMBRE</td>

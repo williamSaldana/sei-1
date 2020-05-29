@@ -61,43 +61,43 @@ function grafica($bienestar,$calidad){
     break;
     
     case '1':
-      $sql.="calidad_huevo.color_yema ";
+      $sql.="calidad_huevo.color_yema, especimenes.codigo ";
     break;
 
     case '2':
-      $sql.="calidad_huevo.inclusiones ";
+      $sql.="calidad_huevo.inclusiones, especimenes.codigo ";
     break;
 
     case '3':
-      $sql.="calidad_huevo.altura_albumina ";
+      $sql.="calidad_huevo.altura_albumina, especimenes.codigo ";
     break;
 
     case '4':
-      $sql.="calidad_huevo.peso_albumina ";
+      $sql.="calidad_huevo.peso_albumina, especimenes.codigo ";
     break;
 
     case '5':
-      $sql.="calidad_huevo.u_haugh ";
+      $sql.="calidad_huevo.u_haugh, especimenes.codigo ";
     break;
 
     case '6':
-      $sql.="calidad_huevo.color_cascara ";
+      $sql.="calidad_huevo.color_cascara, especimenes.codigo ";
     break;
 
     case '7':
-      $sql.="calidad_huevo.peso_cascara ";
+      $sql.="calidad_huevo.peso_cascara, especimenes.codigo ";
     break;
 
     case '8':
-      $sql.="calidad_huevo.ecuador ";
+      $sql.="calidad_huevo.ecuador, especimenes.codigo ";
     break;
 
     case '9':
-      $sql.="calidad_huevo.polo_ancho ";
+      $sql.="calidad_huevo.polo_ancho, especimenes.codigo ";
     break;
 
     case '10':
-      $sql.="calidad_huevo.polo_agudo ";
+      $sql.="calidad_huevo.polo_agudo, especimenes.codigo ";
     break;
   }
 
@@ -107,15 +107,16 @@ function grafica($bienestar,$calidad){
   INNER JOIN especimenes ON especimenes.id_especimen = bienestar.id_especimen
   INNER JOIN calidad_huevo ON especimenes.id_especimen = calidad_huevo.id_especimen";
 
+
   $result = mysqli_query($connection,$sql);
   $etiqueta = array();
   $valoresY = array();
   $valoresX = array();
   
   while ($ver = mysqli_fetch_row($result)) {
-    array_push($etiqueta,$ver[2]);
+    array_push($etiqueta,$ver[0]);
    array_push($valoresY,$ver[1]);
-   array_push($valoresX,$ver[0]);
+   array_push($valoresX,$ver[2]);
    
   }
   

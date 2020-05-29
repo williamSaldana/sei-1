@@ -1,6 +1,6 @@
 window.onload = function () {
-console.log("modal");
   $("#showModal").click(function () {
+    console.log("modal1");
     $(".modal").addClass("is-active");
   });
 

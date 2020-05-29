@@ -14,7 +14,7 @@
         include "conexion/connection.php";
 		$sentencia="DELETE FROM tratamientos WHERE id_tratamiento='".$no."' ";
 		//exit("prueba: ".$sentencia);
-		$resultado=mysqli_query($connection,$sentencia) or die('error en consulta'.mysqli_error($connection);
+		$resultado=mysqli_query($connection,$sentencia) or die('error en consulta'.mysqli_error($connection));
 
 		if ($resultado) {
 		?>

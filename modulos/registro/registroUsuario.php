@@ -10,7 +10,7 @@ $email = $_POST["email"];
 $rol = 2;
 $contrasenna = $_POST["contrasenna"];
 $verificar = $_POST["verificar"];
-$estado = 0;
+$estado = 1;
 
 if (strcmp($contrasenna, $verificar) === 0) {
 

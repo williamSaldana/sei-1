@@ -34,7 +34,7 @@ sessionStorage.setItem('ventana', 'unidadExperimental');
                             </p>
                         </div>
                         <p class="control has-text-centered is-hidden-desktop">
-                            <a class="button is-hovered">
+                            <a class="button is-hovered" href="?page=QRcode/qrcode">
                                 <span class="icon is-small">
                                     <i class="zmdi zmdi-apps"></i>
                                 </span>

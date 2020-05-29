@@ -13,7 +13,8 @@ if(!file_exists($dir)){
 }
 
 if (file_exists($dir.'QR_'.$codigo.'.png')) {
-    echo('El codigo QR ya existe');
+    
+    echo '<img src = "'.$dir.'QR_'.$codigo.'.png'.'"/>';
 }else {
     $fileName = $dir.'QR_'.$codigo.'.png';
 $tamaño = 10;

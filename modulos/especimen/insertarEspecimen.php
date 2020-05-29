@@ -44,8 +44,14 @@ function insertarEspecimen($aUExperimental,$arreglo){
     include("../../conexion/connection.php");
 
     foreach ($arreglo as $value) {
+
+        if ($value[3]=='Activo') {
+            $estado = 1;
+        }else {
+            $estado = 0;
+        }
         
-        $sql = 'INSERT INTO  especimenes (codigo, peso, f_nacimiento, id_uexperimental, status_especimen) VALUES ("'.$value[0].'","'.$value[1].'","'.$value[2].'","'.$aUExperimental.'","'.$value[3].'")';
+        $sql = 'INSERT INTO  especimenes (codigo, peso, f_nacimiento, id_uexperimental, status_especimen) VALUES ("'.$value[0].'","'.$value[1].'","'.$value[2].'","'.$aUExperimental.'","'.$estado.'")';
         
         if(mysqli_query($connection, $sql)){
             

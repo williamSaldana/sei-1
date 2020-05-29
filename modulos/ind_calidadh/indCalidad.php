@@ -131,9 +131,7 @@
 
             <div class="column is-4 has-text-centered">
                 <div class="field is-horizontal">
-                    <div class="field-label is-normal">
-                        <label class="label">Buscar:</label>
-                    </div>
+                    
                     <div class="field-body">
                         <div class="field is-grouped">
                             <p class="control is-expanded has-icons-right">
@@ -143,14 +141,7 @@
                                 </span>
                             </p>
                         </div>
-                        <p class="control has-text-centered is-hidden-desktop">
-                            <a class="button is-hovered">
-                                <span class="icon is-small">
-                                    <i class="zmdi zmdi-apps"></i>
-                                </span>
-                                <span>Escanear</span>
-                            </a>
-                        </p>
+                        
                     </div>
                 </div>
             </div>
@@ -175,7 +166,7 @@
             </div>
 
             <div class="column is-4 has-text-centered">
-                <a class="button is-primary is-hovered" href="">
+                <a class="button is-primary is-hovered" href="?page=ind_calidadh/fnt_listaCalidadH">
                     <span class="icon is-small">
                         <i class="zmdi zmdi-file-text"></i>
                     </span>
@@ -347,7 +338,7 @@
                         </div>
 
                         <div class="control column has-text-centered is-4">
-                            <button class="button is-danger is-active" type="reset">
+                            <button class="button is-danger is-active" type="reset" onclick="location.href='?page=gestion_ue/listarUe'">
                                 <span class="icon is-small">
                                     <i class="zmdi zmdi-close"></i>
                                 </span>

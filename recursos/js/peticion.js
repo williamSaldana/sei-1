@@ -26,7 +26,23 @@ window.onload = function () {
 
 }
 
+function valores(form, arreglo) {
+	
+	var todos = new Array();
+	
+	//console.log(form[arreglo][1]);
+	
+	for (var i = 0, total = form[arreglo].length; i < total; i++){
 
+		if (form[arreglo][i].checked) {
+
+			todos.push(form[arreglo][i].value);
+		}
+	}
+	
+	return todos;
+	
+}
 
 var listado = new Array();
 var num = 1;
@@ -34,10 +50,37 @@ var especimen = new Array();
 var a;
 
 function registroUE(){
+	
+	var res = new Array();
+	var trata = 'tratamiento[]';
+	var formulario = document.getElementById('form1');
+	res =valores(formulario,trata);
+	
 
 	obtenerDato();
 	obtenerUex();
+	obtenerTratamiento(res);
 
+}
+
+function obtenerTratamiento(res) {
+
+	var nombre = document.getElementById('nombre').value;
+
+	var QueryString='funcion=ejecutar&array='+res+'&nombre='+nombre;
+	$.ajax({
+		async: false,
+		type: "GET",
+		url  : "modulos/gestion_ue/insertarUexTrata.php",
+		data : QueryString,
+  
+		success    : function(response){
+			alert('Unidad registrada existosamente');
+  
+	   }
+  
+	 });
+	 window.location.href="?page=gestion_ue/listarUe"
 }
 
 function obtenerDato() {
@@ -75,7 +118,7 @@ function obtenerDato() {
 		data : QueryString,
   
 		success    : function(response){
-			alert(response);
+			
   
 	   }
   
@@ -89,7 +132,7 @@ function obtenerUex() {
 	var table = document.getElementById('tableEspecimen');
 	var cells = table.getElementsByTagName('td');
 
-	console.log(experimental);
+//	console.log(experimental);
 
 	var filas = table.rows.length;
 
@@ -153,11 +196,11 @@ function obtenerUex() {
 		url: "modulos/especimen/insertarEspecimen.php",
 		data: QueryString,
 		success: function (server) {
-			 alert(server); //cuando reciva la respuesta lo imprimo
+			 
 
 		}
 	});
-
+ 
 }
 
 
@@ -166,6 +209,12 @@ function agregarEspecimen() {
 	pesoEspecimen = document.getElementById("pesoEspecimen").value
 	fNacimientoEspecimen = document.getElementById("fNacimientoEspecimen").value
 	estadoEspecimen = document.getElementById("estadoEspecimen").value
+
+	if (estadoEspecimen == 1) {
+		estadoEspecimen = "Activo"
+	}else{
+		estadoEspecimen = "Inactivo"
+	}
 
 	if (codigoEspecimen == "" || pesoEspecimen == "" || fNacimientoEspecimen == "") {
 		alert("llene todos los campos");
@@ -194,7 +243,10 @@ function agregarEspecimen() {
 	$("#tableEspecimen tbody").html(str)
 	$("#tableEspecimen").css('display', 'block');
 }
-
+	document.getElementById("codigoEspecimen").value = ""
+	document.getElementById("pesoEspecimen").value = ""
+	document.getElementById("fNacimientoEspecimen").value = ""
+	document.getElementById("estadoEspecimen").value = "1"
 }
 
 //desde aqui
@@ -388,6 +440,7 @@ function busquedaGestionUe() {
 			$("#tabla_resultado").html(resultado);
 		})
 }
+
 
 
 

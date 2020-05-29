@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
     <?php
  
   $num = $_GET['codigo'];
@@ -35,25 +26,83 @@
 ?>
     <form action="modulos/especimen/bkn_ActualizarEspecimen.php?dato=<?php echo $consulta[0]?>" method="POST">
 
-        <label>Codigo:</label>
-        <input type="text" id="codigo" name="codigo" ; value="<?php echo $consulta[0]?>">
-        <br>
-        <label>Peso:</label>
-        <input type="number" id="peso" name="peso" ; value="<?php echo $consulta[1]?>">
-        <br>
-        <label>Fecha nacimiento:</label>
-        <input type="date" id="fNacimiento" name="fNacimiento" ; value="<?php echo $consulta[2]?>"></input>
-        <br>
-        <label>Unidad experimental:</label>
-        <input type="number" id="uExperimental" name="uExperimental" ; value="<?php echo $consulta[3]?>"></input>
-        <br>
-        <label>Estado:</label>
-        <input type="number" id="estado" name="estado" ; value="<?php echo $consulta[4]?>"></input>
-        <br>
-        <li class="button">
-            <button type="submit">Actualizar</button>
-        </li>
-    </form>
-</body>
+    <div class="column is-6">
+                <section class="section">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-1 is-hidden-mobile">&nbsp;</div>
+                            <div class="column is-13">
+                            <h4 class="title is-4 has-text-grey-dark">Actualizacion especimenes</h4>
+                                <div class="field">
+                                    <label class="label">Codigo</label>
+                                    <div class="control has-icons-right">
+                                        <input class="input is-hovered" type="text" name="codigo"
+                                            id="codigoEspecimen" value="<?php echo $consulta[0]?>">
+                                        <span class="icon is-small is-right">
+                                            <i class="zmdi zmdi-accounts-list"></i>
+                                        </span>
+                                    </div>
+                                </div>
 
-</html>
+                                <div class="field">
+                                    <label class="label">Peso</label>
+                                    <div class="control has-icons-right">
+                                        <input class="input is-hovered" type="number" name="peso"
+                                            id="pesoEspecimen" value="<?php echo $consulta[1]?>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)">
+                                        <span class="icon is-small is-right">
+                                            <i class="zmdi zmdi-collection-text"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Fecha nacimiento</label>
+                                    <div class="control has-icons-right">
+                                        <input class="input is-hovered" type="date" name="fNacimiento"
+                                            id="fNacimientoEspecimen" value="<?php echo $consulta[2]?>">
+                                        <span class="icon is-small is-right">
+                                            <i class="zmdi zmdi-collection-text"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+
+                                    <div class="control has-icons-right">
+                                        <input class="input is-hovered" type="hidden" name="uExperimental"
+                                            id="uExperimental" value="<?php echo $consulta[3]?>">
+                                        <span class="icon is-small is-right">
+                                            <i class="zmdi zmdi-collection-text"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Estado</label>
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select name="estado" id="estado" value="<?php echo $consulta[4]?>">
+                                                <option value="1">Activo</option>
+                                                <option value="0">Inactivo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <button class="button is-primary is-active">
+                                        <span class="icon is-small">
+                                            <i class="zmdi zmdi-accounts-add"></i>
+                                        </span>
+                                        <span>Actualizar Especimen</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            
+
+    </form>
+

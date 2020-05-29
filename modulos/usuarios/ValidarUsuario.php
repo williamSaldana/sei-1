@@ -24,7 +24,7 @@ function validar($aValidarCodigoUcc){
 if($registros>0){
     
     echo '<script type="text/javascript">
-    alert("Registro encontrado");
+    alert("Ya existe un registro con este codigo");
     window.location.href="../../login.php"
 </script>';
 

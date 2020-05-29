@@ -17,7 +17,7 @@ if(isset($_GET['funcion'])){
 
     $arreglo = (array) $arreglo;
 
-    echo(print_r($arreglo));
+    //echo(print_r($arreglo));
 
     agregaUE();
     agregaUsuarios($arreglo);
@@ -80,9 +80,3 @@ function agregaUsuarios($usua){
 
 }
 ?>
-
-<script>
-
-obtenerUex();
-
-</script>

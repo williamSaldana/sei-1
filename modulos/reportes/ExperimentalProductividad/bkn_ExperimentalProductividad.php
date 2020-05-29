@@ -67,8 +67,7 @@ function grafica($experimental,$productividad){
   u_experimentales
   INNER JOIN productividad ON u_experimentales.id_uexperimental = productividad.id_uexperimental";
 
-  echo $sql;
-
+ 
   $result = mysqli_query($connection,$sql);
   $valoresY = array();
   $valoresX = array();

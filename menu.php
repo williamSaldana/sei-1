@@ -104,12 +104,12 @@
                     </a>
                     
 
-                    <a class="navbar-item" href="?page=reportes/BienestarEspecimen/ftn_Bienestarespecimen">
+<!--                     <a class="navbar-item" href="?page=reportes/BienestarEspecimen/ftn_Bienestarespecimen">
                         <span class="icon is-small">
                             <i class="zmdi zmdi-book"></i>
                         </span>
                         &nbsp; Especimenes vs bienestar
-                    </a>
+                    </a> -->
 
                     <a class="navbar-item" href="?page=reportes/EspecimenCalidad/ftn_EspecimenCalidad">
                         <span class="icon is-small">
@@ -128,12 +128,12 @@
                 </div>
             </div>
 
-            <a class="navbar-item" href="">
+ <!--            <a class="navbar-item" href="">
                 <span class="icon is-small">
                     <i class="zmdi zmdi-ruler"></i>
                 </span>
                 &nbsp; Reportes
-            </a>
+            </a> -->
         </div>
 
         <div class="navbar-end">

@@ -109,8 +109,8 @@ datosX = conversor('<?php echo $datosX ?>');
 datosY = conversor('<?php echo $datosY ?>');
 
 var data = [{
-    x: datosX,
-    y: datosY,
+    x: 'uno',
+    y: 10,
     type: 'bar'
 }];
 

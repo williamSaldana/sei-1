@@ -17,6 +17,7 @@
     <script src="recursos/js/peticion.js"></script>
     <script src="recursos/js/graficas.js"></script>
     <script src="recursos/js/plotly-latest.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" ></script>	
 </head>
 
 

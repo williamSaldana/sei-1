@@ -40,7 +40,7 @@
                 </div>
             </div>
             <div class="column is-4 has-text-centered">
-                <a class="button is-primary is-hovered" href="?page=prueba/pruebaphp">
+                <a class="button is-primary is-hovered" href="?page=usuarios/nuevoUsuario">
                     <span class="icon is-small">
                         <i class="zmdi zmdi-account-add"></i>
                     </span>

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
 
     <?php
  
@@ -32,24 +23,69 @@
   }
 
 ?>
-    <form action="?page=gestion_ue/actualizarUE2" method="POST">
 
-        <label>Nombre:</label>
-        <input type="text" id="nombre" name="nombre" ; value="<?php echo $consulta[0]?>">
-        <br>
-        <label>Creacion:</label>
-        <input type="date" id="creacion" name="creacion" ; value="<?php echo $consulta[1]?>">
-        <br>
-        <label>Estado:</label>
-        <select name="estado" id="estado">
-            <option value="1">Activo</option>
-            <option value="0">Inactivo</option>
-        </select>
-        <br>
-        <li class="button">
-            <button type="submit">Actualizar</button>
-        </li>
+
+<!-- --------- -->
+<form action="?page=gestion_ue/actualizarUE2" method="POST">
+
+    <div class="column is-6">
+                <section class="section">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-1 is-hidden-mobile">&nbsp;</div>
+                            <div class="column is-13">
+                            <h4 class="title is-4 has-text-grey-dark">Actualizacion unidad experimental</h4>
+                                <div class="field">
+                                    <label class="label">Nombre</label>
+                                    <div class="control has-icons-right">
+                                        <input class="input is-hovered" type="text" name="nombre"
+                                            id="nombre" value="<?php echo $consulta[0]?>">
+                                        <span class="icon is-small is-right">
+                                            <i class="zmdi zmdi-accounts-list"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="field">
+                                    <label class="label">Creacion</label>
+                                    <div class="control has-icons-right">
+                                        <input class="input is-hovered" type="date" name="creacion"
+                                            id="creacion" value="<?php echo $consulta[1]?>">
+                                        <span class="icon is-small is-right">
+                                            <i class="zmdi zmdi-collection-text"></i>
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <input class="input is-hovered" type="hidden" name="unidad"
+                                            id="unidad" value="<?php echo $num?>">
+
+                                <div class="field">
+                                    <label class="label">Estado</label>
+                                    <div class="control">
+                                        <div class="select is-fullwidth">
+                                            <select name="estado" id="estado" value="<?php echo $consulta[2]?>">
+                                                <option value="1">Activo</option>
+                                                <option value="0">Inactivo</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="control">
+                                    <button class="button is-primary is-active">
+                                        <span class="icon is-small">
+                                            <i class="zmdi zmdi-accounts-add"></i>
+                                        </span>
+                                        <span>Actualizar Unidad Experimental</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            
+
     </form>
-</body>
 
-</html>

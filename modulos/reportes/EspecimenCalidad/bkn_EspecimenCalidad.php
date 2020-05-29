@@ -83,7 +83,7 @@ function grafica($calidad,$especimen){
   especimenes
   INNER JOIN calidad_huevo ON especimenes.id_especimen = calidad_huevo.id_especimen";
 
-  echo $sql;
+ 
 
   $result = mysqli_query($connection,$sql);
   $valoresY = array();
